@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p><font face="arail" size="20" id="number></font></p>
+<script>
+var t = 0;
+var speed = 1;
+var numberDisplay = 0;
+
+function ptFunction(num) {
+  var i = num % 1;
+  return 10**((i+i**2)/2);
+}
+function valueNumber(t) {
+  var x = t;
+  if (x <= 100000) {
+    return (Math.floor(10**(x/10000)+x/5-1)).toLocaleString(); // up to 10^10
+  }
+return "10^10";
+}
+
+function displayOutput() {
+  document.getElementById("number").innerHTML = "<sup>".repeat(8) + " " + "</sup>".repeat(8) + valueNumber(t);
+  t+=speed;
+  t=Math.max(0,t);
+  }
+setInterval(displayOutput,10);
+
+</script>
+</body>
+</html>
